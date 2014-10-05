@@ -4,6 +4,7 @@ A standardized, organized, object-oriented foundation for building high-quality 
 
 * Unit tests scaffolded and ready to go
 * Reversed to old folder structure
+* Load plugin into global variable, so other plugins can access it
 * Idea is to copy "plugin-name" folder and develop in there, so moved .gitignore in there
 
 ## Contents
