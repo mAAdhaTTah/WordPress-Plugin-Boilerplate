@@ -172,6 +172,11 @@ class Plugin_Name {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $this->admin, 'add_plugin_admin_menu' );
+
+		// Add an action link pointing to the options page.
+		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_name . '.php' );
+		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $this->admin, 'add_action_links');
 
 	}
 

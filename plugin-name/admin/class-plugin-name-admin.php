@@ -100,4 +100,48 @@ class Plugin_Name_Admin {
 
 	}
 
+	/**
+	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
+	 *
+	 * @since    0.1.0
+	 */
+	public function add_plugin_admin_menu() {
+
+		$this->plugin_screen_hook_suffix = add_options_page(
+			__( 'Plugin Name Settings', $this->plugin_name ),
+			__( 'Plugin Name', $this->plugin_name ),
+			'edit_posts',
+			$this->plugin_name,
+			array( $this, 'display_plugin_admin_page' )
+		);
+
+	}
+
+	/**
+	 * Render the settings page for this plugin.
+	 *
+	 * @since    0.1.0
+	 */
+	public function display_plugin_admin_page() {
+
+		include_once( plugin_dir_path( __FILE__ ) . 'partials/settings-page.php' );
+
+	}
+
+	/**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    0.1.0
+	 */
+	public function add_action_links( $links ) {
+
+		return array_merge(
+			array(
+				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __( 'Settings', $this->plugin_name ) . '</a>'
+			),
+			$links
+		);
+
+	}
+
 }
