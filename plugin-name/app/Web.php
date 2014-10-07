@@ -1,4 +1,5 @@
 <?php
+namespace Plugin_Name;
 
 /**
  * The public-facing functionality of the plugin.
@@ -20,7 +21,7 @@
  * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Public {
+class Web {
 
 	/**
 	 * The ID of this plugin.
@@ -73,7 +74,7 @@ class Plugin_Name_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, PLUGIN_NAME_URL . 'assets/css/web.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +97,7 @@ class Plugin_Name_Public {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, PLUGIN_NAME_URL . 'assets/js/web.js', array( 'jquery' ), $this->version, false );
 
 	}
 

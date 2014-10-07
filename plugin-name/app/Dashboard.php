@@ -1,4 +1,5 @@
 <?php
+namespace Plugin_Name;
 
 /**
  * The dashboard-specific functionality of the plugin.
@@ -20,7 +21,7 @@
  * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Admin {
+class Dashboard {
 
 	/**
 	 * The ID of this plugin.
@@ -73,7 +74,7 @@ class Plugin_Name_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, PLUGIN_NAME_URL . 'assets/css/dashboard.css', array(), $this->version, 'all' );
 
 	}
 
@@ -96,7 +97,7 @@ class Plugin_Name_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, PLUGIN_NAME_URL . 'assets/js/dashboard.js', array( 'jquery' ), $this->version, false );
 
 	}
 
@@ -124,23 +125,7 @@ class Plugin_Name_Admin {
 	 */
 	public function display_plugin_admin_page() {
 
-		include_once( plugin_dir_path( __FILE__ ) . 'partials/settings-page.php' );
-
-	}
-
-	/**
-	 * Add settings action link to the plugins page.
-	 *
-	 * @since    0.1.0
-	 */
-	public function add_action_links( $links ) {
-
-		return array_merge(
-			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __( 'Settings', $this->plugin_name ) . '</a>'
-			),
-			$links
-		);
+		include_once( PLUGIN_NAME_DIR . 'partials/settings-page.php' );
 
 	}
 

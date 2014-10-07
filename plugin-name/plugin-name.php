@@ -30,27 +30,25 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * The code that runs during plugin activation.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-activator.php';
+/*----------------------------------------------------------------------------*
+ * Define Constants
+ *----------------------------------------------------------------------------*/
+
+// Directory i.e. /home/user/public_html...
+define( 'PLUGIN_NAME_DIR', plugin_dir_path( __FILE__ ) );
+// URL i.e. http://www.yoursite.com/wp-content/plugins/wp-gistpen/
+define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * The code that runs during plugin deactivation.
+ * Include the autoloader
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name-deactivator.php';
+require_once 'lib/php/autoload.php';
 
 /** This action is documented in includes/class-plugin-name-activator.php */
-register_activation_hook( __FILE__, array( 'Plugin_Name_Activator', 'activate' ) );
+register_activation_hook( __FILE__, array( 'Plugin_Name\Activator', 'activate' ) );
 
 /** This action is documented in includes/class-plugin-name-deactivator.php */
-register_deactivation_hook( __FILE__, array( 'Plugin_Name_Deactivator', 'deactivate' ) );
-
-/**
- * The core plugin class that is used to define internationalization,
- * dashboard-specific hooks, and public-facing site hooks.
- */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
+register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactivate' ) );
 
 /**
  * Begins execution of the plugin.
@@ -61,5 +59,5 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-plugin-name.php';
  *
  * @since    1.0.0
  */
-$plugin_name = new Plugin_Name();
+$plugin_name = new Plugin_name\App();
 $plugin_name->run();

@@ -1,4 +1,5 @@
 <?php
+namespace Plugin_Name;
 
 /**
  * Define the internationalization functionality
@@ -24,7 +25,7 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_i18n {
+class I18n {
 
 	/**
 	 * The domain specified for this plugin.
@@ -45,7 +46,7 @@ class Plugin_Name_i18n {
 		load_plugin_textdomain(
 			$this->domain,
 			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
+			PLUGIN_NAME_DIR . '/languages/'
 		);
 
 	}

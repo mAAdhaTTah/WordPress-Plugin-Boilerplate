@@ -1,4 +1,5 @@
 <?php
+namespace Plugin_Name;
 
 /**
  * The file that defines the core plugin class
@@ -27,7 +28,7 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name {
+class App {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -46,16 +47,16 @@ class Plugin_Name {
 	 * @access   public
 	 * @var      Plugin_Name_Admin    $admin    Controls all the admin functionality for the plugin.
 	 */
-	public $admin;
+	public $dashboard;
 
 	/**
-	 * The class respsponsible for the public-facing functionality of the plugin.
+	 * The class respsponsible for the web-facing functionality of the plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   public
 	 * @var      Plugin_Name_Public    $public    Controls all the public functionality for the plugin.
 	 */
-	public $public;
+	public $web;
 
 	/**
 	 * The unique identifier of this plugin.
@@ -89,55 +90,10 @@ class Plugin_Name {
 		$this->plugin_name = 'plugin-name';
 		$this->version = '1.0.0';
 
-		$this->load_dependencies();
+		$this->loader = new Loader();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
-	}
-
-	/**
-	 * Load the required dependencies for this plugin.
-	 *
-	 * Include the following files that make up the plugin:
-	 *
-	 * - Plugin_Name_Loader. Orchestrates the hooks of the plugin.
-	 * - Plugin_Name_i18n. Defines internationalization functionality.
-	 * - Plugin_Name_Admin. Defines all hooks for the dashboard.
-	 * - Plugin_Name_Public. Defines all hooks for the public side of the site.
-	 *
-	 * Create an instance of the loader which will be used to register the hooks
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function load_dependencies() {
-
-		/**
-		 * The class responsible for orchestrating the actions and filters of the
-		 * core plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-loader.php';
-
-		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-plugin-name-i18n.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the Dashboard.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-plugin-name-admin.php';
-
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-plugin-name-public.php';
-
-		$this->loader = new Plugin_Name_Loader();
 
 	}
 
@@ -152,7 +108,7 @@ class Plugin_Name {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Plugin_Name_i18n();
+		$plugin_i18n = new I18n();
 		$plugin_i18n->set_domain( $this->get_plugin_name() );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
@@ -168,15 +124,11 @@ class Plugin_Name {
 	 */
 	private function define_admin_hooks() {
 
-		$this->admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
+		$this->dashboard = new Dashboard( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $this->admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $this->admin, 'enqueue_scripts' );
-		$this->loader->add_action( 'admin_menu', $this->admin, 'add_plugin_admin_menu' );
-
-		// Add an action link pointing to the options page.
-		$plugin_basename = plugin_basename( plugin_dir_path( realpath( dirname( __FILE__ ) ) ) . $this->plugin_name . '.php' );
-		$this->loader->add_filter( 'plugin_action_links_' . $plugin_basename, $this->admin, 'add_action_links');
+		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_menu', $this->dashboard, 'add_plugin_admin_menu' );
 
 	}
 
@@ -189,10 +141,10 @@ class Plugin_Name {
 	 */
 	private function define_public_hooks() {
 
-		$this->public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$this->web = new Web( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $this->public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $this->public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $this->web, 'enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $this->web, 'enqueue_scripts' );
 
 	}
 

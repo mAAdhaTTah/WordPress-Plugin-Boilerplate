@@ -1,0 +1,10 @@
+{
+  "name": "wp-plugin-boilerplate",
+  "version": "1.0.0",
+  "description": "A template for WordPress plugin development, built with modern developments tools and workflows. Based on Tom McFarlin's work.",
+  "author": "",
+  "license": "GPL-2.0+",
+  "devDependencies": {
+    "bower": "^1.3.12"
+  }
+}
