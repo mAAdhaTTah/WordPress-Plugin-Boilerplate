@@ -55,8 +55,9 @@ register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactiv
  */
 class Plugin_Name {
 
+	static $app;
+
 	public static function init() {
-		static $app;
 
 		if ( null == self::$app ) {
 			$app = new Plugin_name\App();
