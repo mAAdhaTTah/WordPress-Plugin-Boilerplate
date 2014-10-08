@@ -8,7 +8,6 @@ namespace Plugin_Name;
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  */
 
 /**
@@ -19,7 +18,6 @@ namespace Plugin_Name;
  * run function to execute the list of actions and filters.
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
 class Loader {

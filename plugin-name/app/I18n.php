@@ -11,7 +11,6 @@ namespace Plugin_Name;
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  */
 
 /**
@@ -22,7 +21,6 @@ namespace Plugin_Name;
  *
  * @since      1.0.0
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
 class I18n {
@@ -46,7 +44,7 @@ class I18n {
 		load_plugin_textdomain(
 			$this->domain,
 			false,
-			PLUGIN_NAME_DIR . '/languages/'
+			PLUGIN_NAME_DIR . 'languages/'
 		);
 
 	}

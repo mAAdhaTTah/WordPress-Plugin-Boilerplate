@@ -8,17 +8,15 @@ namespace Plugin_Name;
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
  */
 
 /**
  * The dashboard-specific functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the dashboard-specific stylesheet and JavaScript.
+ * Defines the plugin name, version, a settings page, and two examples hooks
+ * for how to enqueue the dashboard-specific stylesheet and JavaScript.
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
 class Dashboard {
@@ -79,7 +77,7 @@ class Dashboard {
 	}
 
 	/**
-	 * Register the JavaScript for the dashboard.
+	 * Register the JavaScript for the Dashboard.
 	 *
 	 * @since    1.0.0
 	 */

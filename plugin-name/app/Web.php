@@ -8,7 +8,6 @@ namespace Plugin_Name;
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/public
  */
 
 /**
@@ -18,7 +17,6 @@ namespace Plugin_Name;
  * enqueue the dashboard-specific stylesheet and JavaScript.
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/public
  * @author     Your Name <email@example.com>
  */
 class Web {

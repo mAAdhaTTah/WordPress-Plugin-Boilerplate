@@ -11,7 +11,6 @@ namespace Plugin_Name;
  * @since      1.0.0
  *
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  */
 
 /**
@@ -25,7 +24,6 @@ namespace Plugin_Name;
  *
  * @since      1.0.0
  * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
 class App {
@@ -36,7 +34,7 @@ class App {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Plugin_Name_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -45,7 +43,7 @@ class App {
 	 *
 	 * @since    1.0.0
 	 * @access   public
-	 * @var      Plugin_Name_Admin    $admin    Controls all the admin functionality for the plugin.
+	 * @var      Dashboard    $admin    Controls all the admin functionality for the plugin.
 	 */
 	public $dashboard;
 
@@ -54,7 +52,7 @@ class App {
 	 *
 	 * @since    1.0.0
 	 * @access   public
-	 * @var      Plugin_Name_Public    $public    Controls all the public functionality for the plugin.
+	 * @var      Web    $public    Controls all the public functionality for the plugin.
 	 */
 	public $web;
 
@@ -92,15 +90,15 @@ class App {
 
 		$this->loader = new Loader();
 		$this->set_locale();
-		$this->define_admin_hooks();
-		$this->define_public_hooks();
+		$this->define_dashboard_hooks();
+		$this->define_web_hooks();
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Plugin_Name_i18n class in order to set the domain and to register the hook
+	 * Uses the I18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -122,7 +120,7 @@ class App {
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_admin_hooks() {
+	private function define_dashboard_hooks() {
 
 		$this->dashboard = new Dashboard( $this->get_plugin_name(), $this->get_version() );
 
@@ -133,13 +131,13 @@ class App {
 	}
 
 	/**
-	 * Register all of the hooks related to the public-facing functionality
+	 * Register all of the hooks related to the web functionality
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   private
 	 */
-	private function define_public_hooks() {
+	private function define_web_hooks() {
 
 		$this->web = new Web( $this->get_plugin_name(), $this->get_version() );
 
