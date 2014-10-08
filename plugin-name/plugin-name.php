@@ -51,6 +51,23 @@ register_activation_hook( __FILE__, array( 'Plugin_Name\Activator', 'activate' )
 register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactivate' ) );
 
 /**
+ * Singleton container class
+ */
+class Plugin_Name {
+
+	public static function init() {
+		static $app;
+
+		if ( null == self::$app ) {
+			$app = new Plugin_name\App();
+			$app->run();
+		}
+
+		return $app;
+	}
+}
+
+/**
  * Begins execution of the plugin.
  *
  * Since everything within the plugin is registered via hooks,
@@ -59,5 +76,7 @@ register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactiv
  *
  * @since    1.0.0
  */
-$plugin_name = new Plugin_name\App();
-$plugin_name->run();
+function plugin_name() {
+	return Plugin_Name::init();
+}
+plugin_name();
