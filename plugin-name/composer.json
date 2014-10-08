@@ -19,6 +19,6 @@
     },
     "minimum-stability": "stable",
     "config": {
-        "vendor-dir": "lib/php"
+        "vendor-dir": "lib"
     }
 }
