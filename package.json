@@ -1,7 +1,7 @@
 {
   "name": "wp-plugin-boilerplate",
   "version": "1.0.0",
-  "description": "A template for WordPress plugin development, built with modern developments tools and workflows. Based on Tom McFarlin's work.",
+  "description": "A modern WordPress development boilerplate, based on Tom McFarlin's wppb.io",
   "author": "",
   "license": "GPL-2.0+",
   "devDependencies": {

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "homepage": "http://www.yoursite.com/",
   "authors": [
-    "Your Name <yourname@example.com>"
+    "James DiGioia <jamesorodig@gmail.com>"
   ],
-  "description": "A template for WordPress plugin development, built with modern developments tools and workflows. Based on Tom McFarlin's work.",
+  "description": "A modern WordPress development boilerplate, based on Tom McFarlin's wppb.io",
   "license": "GPL-2.0+",
   "private": true,
   "ignore": [
