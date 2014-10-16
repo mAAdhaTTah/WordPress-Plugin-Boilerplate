@@ -39,3 +39,10 @@ intermediate
 cache
 lib
 node_modules
+bower_components
+
+# Generated files
+assets/js/*.js
+assets/css/**
+build
+wp-gistpen.zip
