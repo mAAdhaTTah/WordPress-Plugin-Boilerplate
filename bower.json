@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "homepage": "http://www.yoursite.com/",
   "authors": [
-    "James DiGioia <jamesorodig@gmail.com>"
+    "James DiGioia <jamesorodig@gmail.com>",
+    "Tom McFarlin"
   ],
   "description": "A modern WordPress development boilerplate, based on Tom McFarlin's wppb.io",
   "license": "GPL-2.0+",
@@ -12,8 +13,6 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "lib/js",
-    "test",
     "tests"
   ]
 }

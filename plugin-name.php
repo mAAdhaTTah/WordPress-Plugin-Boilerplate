@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
 // If we don't have the right PHP version, abort.
 if ( version_compare( PHP_VERSION, '5.3.0', '<' ) ) {
 	deactivate_plugins( basename( __FILE__ ) );
-	wp_die('<p><strong>SocialDen</strong> requires PHP  version 5.3 or greater.</p>', 'Plugin Activation Error',  array( 'response'=>200 ) );
+	wp_die('<p><strong>Plugin Name</strong> requires PHP  version 5.3 or greater.</p>', 'Plugin Activation Error',  array( 'response' => 200 ) );
 }
 
 /*----------------------------------------------------------------------------*
@@ -48,12 +48,12 @@ define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 /**
  * Include the autoloader
  */
-require_once 'lib/php/autoload.php';
+require_once 'lib/autoload.php';
 
-/** This action is documented in includes/class-plugin-name-activator.php */
+/** This action is documented in app/Activator.php */
 register_activation_hook( __FILE__, array( 'Plugin_Name\Activator', 'activate' ) );
 
-/** This action is documented in includes/class-plugin-name-deactivator.php */
+/** This action is documented in app/Deactivator.php */
 register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactivate' ) );
 
 /**
@@ -66,7 +66,7 @@ class Plugin_Name {
 	public static function init() {
 
 		if ( null == self::$app ) {
-			$app = new Plugin_name\App();
+			$app = new Plugin_Name\App();
 			$app->run();
 		}
 
@@ -80,6 +80,9 @@ class Plugin_Name {
  * Since everything within the plugin is registered via hooks,
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
+ *
+ * Also returns copy of the app object so 3rd party developers
+ * can interact with the app's hooks contained within.
  *
  * @since    1.0.0
  */

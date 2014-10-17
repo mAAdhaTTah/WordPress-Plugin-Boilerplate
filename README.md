@@ -1,62 +1,33 @@
-# WordPress Plugin Boilerplate
+# wp-plugin-boilerplate
 
-A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins. This fork includes the following changes:
+A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
 
-* Unit tests scaffolded and ready to go
-* Reversed to old folder structure
-* Load plugin into global variable, so other plugins can access it
-* Idea is to copy "plugin-name" folder and develop in there, so moved .gitignore in there
+## Requirements ##
 
-## Contents
+wp-plugin-boilerplate comes with these tool requirements:
 
-The WordPress Plugin Boilerplate includes the following files:
-
-* `.gitignore`. Used to exclude certain files from the repository.
-* `ChangeLog.md`. The list of changes to the core project.
-* `README.md`. The file that you’re currently reading.
-* A `plugin-name` subdirectory that contains the source code - a fully executable WordPress plugin.
+1. PHP 5.3+
+	* Note: WordPress is compatible back to 5.2, so not all your users will be able to use this plugin yet.
+2. [Composer][1], for back-end libraries.
+3. [npm][2], for build tools.
+3. [Bower][3], for front-end libraries.
+4. [Gulp][4], for project builds
 
 ## Features
 
-* The Boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](http://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/).
+* New plugins can be generated with `composer create-project maadhattah/wp-plugin-boilerplate <target_dir>`.
+	* The flattened structure is required for this to work.
+* boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](http://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/).
 * All classes, functions, and variables are documented so that you know what you need to be changed.
-* The Boilerplate uses a strict file organization scheme that correspond both to the WordPress Plugin Repository structure, and that make it easy to organize the files that compose the plugin.
+* The app is loaded into a singleton so third-party developers can manipulate the hooks.
 * The project includes a `.pot` file as a starting point for internationalization.
+* The unit tests are scaffolded and ready to go, based on `wp scaffold plugin-tests`, which provides support for [travis-ci][1].
 
 ## Installation
 
-The Boilerplate can be installed in one of two ways both of which are documented below. Note that because of its directory structure, the Boilerplate cannot be installed “as-is.”
+The plugin can be developed in your `wp-content` folder directly. Run `gulp` to make the minified and concatenated files and begin the watch process. Whenever the scripts or styles change, gulp will recompile them into their respective css and js files.
 
-Instead, the options are:
-
-### Copying a Directory
-
-1. Copy the `trunk` directory into your `wp-content/plugins` directory. You may wish to rename this to something else.
-2. In the WordPress dashboard, navigation to the *Plugins* page
-Locate the menu item that reads “The WordPress Plugin Boilerplate.”
-3. Click on *Activate.*
-
-### Creating a Symbolic Link
-
-#### On Linux or OS X
-
-1. Copy the `WordPress-Plugin-Boilerplate` directory into your `wp-content/plugins` directory.
-2. Create a symbolic link between the `trunk` directory and the plugin. For example: `ln -s plugin-name/trunk /path/to/wordpress/wp-content/plugins/plugin-name`
-3. In the WordPress dashboard, navigation to the *Plugins* page
-Locate the menu item that reads “The WordPress Plugin Boilerplate.”
-4. Click on *Activate.*
-
-#### On Windows
-
-1. Copy the `WordPress-Plugin-Boilerplate` directory into your `wp-content/plugins` directory.
-2. Create a symbolic link between the `trunk` directory and the plugin. For example: `mklink /J path\to\wp-content\plugins \path\to\WordPress-Plugin-Boilerplate\trunk\plugin-name`
-3. In the WordPress dashboard, navigation to the *Plugins* page
-Locate the menu item that reads “The WordPress Plugin Boilerplate.”
-4. Click on *Activate.*
-
-Note that this will activate the source code of the Boilerplate, but because the Boilerplate has no real functionality so no menu  items, meta boxes, or custom post types will be added.
-
-Examples are slated to be added to the [Boilerplate’s website](http://wppb.io) as the site continues to grow.
+When you want to provide a version to distribute, run `gulp build` and distribute the resulting .zip file.
 
 ## Recommended Tools
 
@@ -80,7 +51,7 @@ The WordPress Plugin Boilerplate is licensed under the GPL v2 or later.
 
 > You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
-A copy of the license is included in the root of the plugin’s directory. The file is named `LICENSE`.
+A copy of the license is included in the root of the directory. The file is named `LICENSE`.
 
 ## Important Notes
 
@@ -92,13 +63,9 @@ For reference, [here's a discussion](http://make.wordpress.org/themes/2013/03/04
 
 ### Includes
 
-Note that if you include your own classes, or third-party libraries, there are three locations in which said files may go:
+Note that if you include third-party libraries, use either `bower install --save-dev`, for front end libraries, or `composer require`, for php libraries.
 
-* `plugin-name/includes` is where functionality shared between the dashboard and the public-facing parts of the side reside
-* `plugin-name/admin` is for all dashboard-specific functionality
-* `plugin-name/public` is for all public-facing functionality
-
-Note that previous versions of the Boilerplate did not include `Plugin_Name_Loader` but this class is used to register all filters and actions with WordPress.
+Note that previous versions of the Boilerplate did not include `Loader` but this class is used to register all filters and actions with WordPress.
 
 The example code provided shows how to register your hooks with the Loader class. More information will be provided in the upcoming documentation on the website.
 
@@ -120,22 +87,16 @@ The Boilerplate offers support for `assets` and `trunk` as `branches` is somethi
 
 When committing code to the WordPress Plugin Repository, all of the banner, icon, and screenshot should be placed in the `assets` directory of the Repository, and the core code should be placed in the `trunk` directory.
 
-### What About Other Features?
-
-The previous version of the WordPress Plugin Boilerplate included support for a number of different projects such as the [GitHub Updater](https://github.com/afragen/github-updater).
-
-These tools are not part of the core of this Boilerplate, as I see them as being additions, forks, or other contributions to the Boilerplate.
-
-The same is true of using tools like Grunt, Composer, etc. These are all fantastic tools, but not everyone uses them. In order to  keep the core Boilerplate as light as possible, this feature have been removed and will be introduced in other editions, and will be listed and maintained on the project homepage
-
 # Credits
 
 The WordPress Plugin Boilerplate was started in 2011 by [Tom McFarlin](http://twitter.com/tommcfarlin/) and his since included a number of great contributions.
 
-The current version of the Boilerplate was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency).
+The current version of the Boilerplate was developed in conjunction with [Josh Eaton](https://twitter.com/jjeaton), [Ulrich Pogson](https://twitter.com/grapplerulrich), and [Brad Vincent](https://twitter.com/themergency). This fork is developed and maintained by [James DiGioia](http://jamesdigioia.com/).
 
 The homepage is based on a design as provided by [HTML5Up](http://html5up.net), the Boilerplate logo was designed by  Rob McCaskill of [BungaWeb](http://bungaweb.com), and the site `favicon` was created by [Mickey Kay](https://twitter.com/McGuive7).
 
-## Documentation, FAQs, and More
-
-Because this version is a major rewrite of the core plugin, we’re working to create an entire site around the Boilerplate. If you’re interested, please [let me know](http://tommcfarlin.com/contact) and we’ll see what we can do.
+  [1]: https://getcomposer.org/
+  [2]: https://www.npmjs.org/
+  [3]: http://bower.io/
+  [4]: http://gulpjs.com/
+  [5]: https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate

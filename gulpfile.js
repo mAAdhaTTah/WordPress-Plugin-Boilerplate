@@ -115,7 +115,7 @@ gulp.task('copy', function() {
 
 gulp.task('zip', function() {
 	return gulp.src('build/**')
-		.pipe(zip('wp-gistpen.zip'))
+		.pipe(zip('plugin-name.zip'))
 		.pipe(gulp.dest('./'));
 });
 
