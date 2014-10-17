@@ -2,15 +2,6 @@
 namespace Plugin_Name;
 
 /**
- * Register all actions and filters for the plugin
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
  * Register all actions and filters for the plugin.
  *
  * Maintain a list of all hooks that are registered throughout
@@ -19,6 +10,8 @@ namespace Plugin_Name;
  *
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class Loader {
 

@@ -4,20 +4,13 @@ namespace Plugin_Name;
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the dashboard-specific stylesheet and JavaScript.
  *
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class Web {
 

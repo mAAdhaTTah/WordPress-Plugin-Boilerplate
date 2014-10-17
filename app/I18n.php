@@ -2,26 +2,15 @@
 namespace Plugin_Name;
 
 /**
- * Define the internationalization functionality
- *
- * Loads and defines the internationalization files for this plugin
- * so that its ready for translation.
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
  * Define the internationalization functionality.
  *
  * Loads and defines the internationalization files for this plugin
  * so that its ready for translation.
  *
- * @since      1.0.0
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class I18n {
 

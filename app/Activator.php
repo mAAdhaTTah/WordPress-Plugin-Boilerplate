@@ -2,22 +2,14 @@
 namespace Plugin_Name;
 
 /**
- * Fired during plugin activation
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
  * Fired during plugin activation.
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.0.0
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class Activator {
 

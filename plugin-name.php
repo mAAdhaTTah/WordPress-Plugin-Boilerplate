@@ -45,10 +45,15 @@ define( 'PLUGIN_NAME_DIR', plugin_dir_path( __FILE__ ) );
 // URL i.e. http://www.yoursite.com/wp-content/plugins/wp-gistpen/
 define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
 
-/**
- * Include the autoloader
- */
+/*----------------------------------------------------------------------------*
+ * Autoload Classes
+ *----------------------------------------------------------------------------*/
+
 require_once 'lib/autoload.php';
+
+/*----------------------------------------------------------------------------*
+ * Register Activation and Deactivation Hooks
+ *----------------------------------------------------------------------------*/
 
 /** This action is documented in app/Activator.php */
 register_activation_hook( __FILE__, array( 'Plugin_Name\Activator', 'activate' ) );
@@ -57,7 +62,15 @@ register_activation_hook( __FILE__, array( 'Plugin_Name\Activator', 'activate' )
 register_deactivation_hook( __FILE__, array( 'Plugin_Name\Deactivator', 'deactivate' ) );
 
 /**
- * Singleton container class
+ * Singleton Container.
+ *
+ * Maintains a single copy of the app object and kicks off
+ * the plugin execution when a new one is created.
+ *
+ * @package    Plugin_Name
+ * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class Plugin_Name {
 
@@ -82,8 +95,9 @@ class Plugin_Name {
  * not affect the page life cycle.
  *
  * Also returns copy of the app object so 3rd party developers
- * can interact with the app's hooks contained within.
+ * can interact with the plugin's hooks contained within.
  *
+ * @return   Plugin_Name\App    App Plugin's app object
  * @since    1.0.0
  */
 function plugin_name() {

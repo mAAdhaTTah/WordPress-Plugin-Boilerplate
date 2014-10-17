@@ -4,20 +4,13 @@ namespace Plugin_Name;
 /**
  * The dashboard-specific functionality of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
- * The dashboard-specific functionality of the plugin.
- *
  * Defines the plugin name, version, a settings page, and two examples hooks
  * for how to enqueue the dashboard-specific stylesheet and JavaScript.
  *
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @link       http://example.com
+ * @since      1.0.0
  */
 class Dashboard {
 

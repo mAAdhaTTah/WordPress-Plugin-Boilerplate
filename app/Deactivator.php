@@ -2,22 +2,14 @@
 namespace Plugin_Name;
 
 /**
- * Fired during plugin deactivation
- *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- */
-
-/**
  * Fired during plugin deactivation.
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
- * @since      1.0.0
  * @package    Plugin_Name
  * @author     Your Name <email@example.com>
+ * @since      1.0.0
+ * @link       http://example.com
  */
 class Deactivator {
 

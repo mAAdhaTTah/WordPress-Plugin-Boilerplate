@@ -6,6 +6,8 @@
     "James DiGioia <jamesorodig@gmail.com>",
     "Tom McFarlin"
   ],
+  "homepage": "https://github.com/mAAdhaTTah/wp-plugin-boilerplate",
+  "main": "gulpfile.js",
   "license": "GPL-2.0+",
   "devDependencies": {
     "bower": "^1.3.12",
