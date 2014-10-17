@@ -2,7 +2,7 @@
 
 ## Requirements ##
 
-wp-plugin-boilerplate comes with these tool requirements:
+wppb-mod comes with these tool requirements:
 
 1. PHP 5.3+
 	* Note: WordPress is compatible back to 5.2, so not all your users will be able to use this plugin yet.
@@ -24,7 +24,7 @@ wp-plugin-boilerplate comes with these tool requirements:
 
 Let you user developers know how to contribute. What branch should they pull against? What kind of things should they work on? Wiki? Etc.
 
-If you want to contribute to wp-plugin-boilerplate, please work on and pull against the `develop` branch. If you're contributing to anything in the `app` folder, consider merging [upstream][5].
+If you want to contribute to wppb-mod, please work on and pull against the `develop` branch. If you're contributing to anything in the `app` folder, consider merging [upstream][5].
 
   [1]: https://getcomposer.org/
   [2]: https://www.npmjs.org/

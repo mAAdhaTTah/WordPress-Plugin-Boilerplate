@@ -1,12 +1,12 @@
 {
-  "name": "wp-plugin-boilerplate",
+  "name": "wppb-mod",
   "version": "1.0.0",
   "description": "A modern WordPress development boilerplate, based on Tom McFarlin's wppb.io",
   "authors": [
     "James DiGioia <jamesorodig@gmail.com>",
     "Tom McFarlin"
   ],
-  "homepage": "https://github.com/mAAdhaTTah/wp-plugin-boilerplate",
+  "homepage": "https://github.com/mAAdhaTTah/wppb-mod",
   "main": "gulpfile.js",
   "license": "GPL-2.0+",
   "devDependencies": {

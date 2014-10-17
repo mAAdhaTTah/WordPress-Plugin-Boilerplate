@@ -1,9 +1,9 @@
 {
-  "name": "maadhattah/wp-plugin-boilerplate",
+  "name": "maadhattah/wppb-mod",
   "type": "project",
   "license": "GPL-2.0+",
   "description": "A modern WordPress development boilerplate, based on Tom McFarlin's wppb.io",
-  "homepage": "https://github.com/mAAdhaTTah/wp-plugin-boilerplate",
+  "homepage": "https://github.com/mAAdhaTTah/wppb-mod",
   "authors": [
     {
       "name": "James DiGioia",
@@ -19,7 +19,7 @@
     "wordpress", "plugin", "boilerplate"
   ],
   "support": {
-    "issues": "https://github.com/mAAdhaTTah/wp-plugin-boilerplate/issues"
+    "issues": "https://github.com/mAAdhaTTah/wppb-mod/issues"
   },
   "require": {
     "php": ">=5.3.0"

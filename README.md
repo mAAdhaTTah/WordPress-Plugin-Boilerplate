@@ -1,10 +1,10 @@
-# wp-plugin-boilerplate
+# wppb-mod
 
 A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
 
 ## Requirements ##
 
-wp-plugin-boilerplate comes with these tool requirements:
+wppb-mod comes with these tool requirements:
 
 1. PHP 5.3+
 	* Note: WordPress is compatible back to 5.2, so not all your users will be able to use this plugin yet.
@@ -15,7 +15,7 @@ wp-plugin-boilerplate comes with these tool requirements:
 
 ## Features
 
-* New plugins can be generated with `composer create-project maadhattah/wp-plugin-boilerplate <target_dir>`.
+* New plugins can be generated with `composer create-project maadhattah/wppb-mod <target_dir>`.
 	* The flattened structure is required for this to work.
 * boilerplate is based on the [Plugin API](http://codex.wordpress.org/Plugin_API), [Coding Standards](http://codex.wordpress.org/WordPress_Coding_Standards), and [Documentation Standards](http://make.wordpress.org/core/handbook/inline-documentation-standards/php-documentation-standards/).
 * All classes, functions, and variables are documented so that you know what you need to be changed.

@@ -1,7 +1,7 @@
 {
-  "name": "wp-plugin-boilerplate",
+  "name": "wppb-mod",
   "version": "1.0.0",
-  "homepage": "http://www.yoursite.com/",
+  "homepage": "https://github.com/mAAdhaTTah/wppb-mod",
   "authors": [
     "James DiGioia <jamesorodig@gmail.com>",
     "Tom McFarlin"
