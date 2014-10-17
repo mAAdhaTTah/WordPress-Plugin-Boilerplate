@@ -40,6 +40,15 @@ class Web {
 	private $version;
 
 	/**
+	 * The minification string
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var string
+	 */
+	private $min = '';
+
+	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
@@ -50,6 +59,10 @@ class Web {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+		if( ! defined( SCRIPT_DEBUG ) || SCRIPT_DEBUG !== true ) {
+			$this->min = '.min';
+		}
 
 	}
 
@@ -72,7 +85,7 @@ class Web {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, PLUGIN_NAME_URL . 'assets/css/web.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, PLUGIN_NAME_URL . 'assets/css/web' . $this->min . '.css', array(), $this->version, 'all' );
 
 	}
 
@@ -95,7 +108,7 @@ class Web {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, PLUGIN_NAME_URL . 'assets/js/web.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, PLUGIN_NAME_URL . 'assets/js/web' . $this->min . '.js', array( 'jquery' ), $this->version, false );
 
 	}
 
