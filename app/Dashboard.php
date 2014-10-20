@@ -108,7 +108,7 @@ class Dashboard {
 	/**
 	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
 	 *
-	 * @since    0.1.0
+	 * @since    1.0.0
 	 */
 	public function add_plugin_admin_menu() {
 
@@ -125,7 +125,7 @@ class Dashboard {
 	/**
 	 * Render the settings page for this plugin.
 	 *
-	 * @since    0.1.0
+	 * @since    1.0.0
 	 */
 	public function display_plugin_admin_page() {
 
