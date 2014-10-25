@@ -44,6 +44,8 @@ if ( version_compare( PHP_VERSION, '5.3.0', '<' ) ) {
 define( 'PLUGIN_NAME_DIR', plugin_dir_path( __FILE__ ) );
 // URL i.e. http://www.yoursite.com/wp-content/plugins/wp-gistpen/
 define( 'PLUGIN_NAME_URL', plugin_dir_url( __FILE__ ) );
+// Plugin Basename, for settings page
+define( 'PLUGIN_NAME_BASENAME', plugin_basename( __FILE__ ) );
 
 /*----------------------------------------------------------------------------*
  * Autoload Classes

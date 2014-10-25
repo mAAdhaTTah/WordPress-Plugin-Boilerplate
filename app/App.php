@@ -116,6 +116,7 @@ class App {
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_menu', $this->dashboard, 'add_plugin_admin_menu' );
+		$this->loader->add_filter( 'plugin_action_links_' . PLUGIN_NAME_BASENAME, $this->settings, 'add_action_links' );
 
 	}
 
