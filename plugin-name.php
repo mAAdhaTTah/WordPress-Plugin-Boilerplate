@@ -81,11 +81,11 @@ class Plugin_Name {
 	public static function init() {
 
 		if ( null == self::$app ) {
-			$app = new Plugin_Name\App();
-			$app->run();
+			self::$app = new Plugin_Name\App();
+			self::$app->run();
 		}
 
-		return $app;
+		return self::$app;
 	}
 }
 
