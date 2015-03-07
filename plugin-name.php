@@ -83,9 +83,9 @@ class Plugin_Name {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 * @var      string    $plugin_slug    The string used to uniquely identify this plugin.
 	 */
-	static $plugin_name = 'plugin-name';
+	static $plugin_slug = 'plugin-name';
 
 	/**
 	 * The current version of the plugin.

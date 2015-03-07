@@ -75,7 +75,7 @@ class App {
 	private function set_locale() {
 
 		$plugin_i18n = new I18n();
-		$plugin_i18n->set_domain( Plugin_Name::$plugin_name );
+		$plugin_i18n->set_domain( Plugin_Name::$plugin_slug );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 

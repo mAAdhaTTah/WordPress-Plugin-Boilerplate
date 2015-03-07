@@ -55,7 +55,7 @@ class Web {
 		 * class.
 		 */
 
-		wp_enqueue_style( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/css/web' . $this->min . '.css', array(), Plugin_Name::$version, 'all' );
+		wp_enqueue_style( Plugin_Name::$plugin_slug, PLUGIN_NAME_URL . 'assets/css/web' . $this->min . '.css', array(), Plugin_Name::$version, 'all' );
 
 	}
 
@@ -78,7 +78,7 @@ class Web {
 		 * class.
 		 */
 
-		wp_enqueue_script( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/js/web' . $this->min . '.js', array( 'jquery' ), Plugin_Name::$version, false );
+		wp_enqueue_script( Plugin_Name::$plugin_slug, PLUGIN_NAME_URL . 'assets/js/web' . $this->min . '.js', array( 'jquery' ), Plugin_Name::$version, false );
 
 	}
 

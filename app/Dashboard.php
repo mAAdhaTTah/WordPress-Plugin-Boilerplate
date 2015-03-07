@@ -55,7 +55,7 @@ class Dashboard {
 		 * class.
 		 */
 
-		wp_enqueue_style( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/css/dashboard' . $this->min . '.css', array(), Plugin_Name::$version, 'all' );
+		wp_enqueue_style( Plugin_Name::$plugin_slug, PLUGIN_NAME_URL . 'assets/css/dashboard' . $this->min . '.css', array(), Plugin_Name::$version, 'all' );
 
 	}
 
@@ -78,7 +78,7 @@ class Dashboard {
 		 * class.
 		 */
 
-		wp_enqueue_script( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/js/dashboard' . $this->min . '.js', array( 'jquery' ), Plugin_Name::$version, false );
+		wp_enqueue_script( Plugin_Name::$plugin_slug, PLUGIN_NAME_URL . 'assets/js/dashboard' . $this->min . '.js', array( 'jquery' ), Plugin_Name::$version, false );
 
 	}
 
@@ -90,10 +90,10 @@ class Dashboard {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Plugin Name Settings', Plugin_Name::$plugin_name ),
-			__( 'Plugin Name', Plugin_Name::$plugin_name ),
+			__( 'Plugin Name Settings', Plugin_Name::$plugin_slug ),
+			__( 'Plugin Name', Plugin_Name::$plugin_slug ),
 			'edit_posts',
-			Plugin_Name::$plugin_name,
+			Plugin_Name::$plugin_slug,
 			array( $this, 'display_plugin_admin_page' )
 		);
 
@@ -119,7 +119,7 @@ class Dashboard {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . Plugin_Name::$plugin_name ) . '">' . __( 'Settings', Plugin_Name::$plugin_name ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . Plugin_Name::$plugin_slug ) . '">' . __( 'Settings', Plugin_Name::$plugin_slug ) . '</a>'
 			),
 			$links
 		);
