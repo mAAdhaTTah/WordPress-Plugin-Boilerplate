@@ -45,8 +45,8 @@ class Web {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @var      string    $plugin_name       The name of the plugin.
-	 * @var      string    $version    The version of this plugin.
+	 * @param      string    $plugin_name       The name of the plugin.
+	 * @param      string    $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -70,10 +70,10 @@ class Web {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Name_Public_Loader as all of the hooks are defined
+		 * defined in Plugin_Name_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Plugin_Name_Public_Loader will then create the relationship
+		 * The Plugin_Name_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -93,10 +93,10 @@ class Web {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Plugin_Name_Public_Loader as all of the hooks are defined
+		 * defined in Plugin_Name_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Plugin_Name_Public_Loader will then create the relationship
+		 * The Plugin_Name_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
