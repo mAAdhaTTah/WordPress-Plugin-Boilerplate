@@ -46,24 +46,6 @@ class App {
 	public $web;
 
 	/**
-	 * The unique identifier of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
-	 */
-	protected $plugin_name;
-
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
-	 */
-	protected $version;
-
-	/**
 	 * Define the core functionality of the plugin.
 	 *
 	 * Set the plugin name and the plugin version that can be used throughout the plugin.
@@ -73,9 +55,6 @@ class App {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-
-		$this->plugin_name = 'plugin-name';
-		$this->version = '1.0.0';
 
 		$this->loader = new Loader();
 		$this->set_locale();
@@ -96,7 +75,7 @@ class App {
 	private function set_locale() {
 
 		$plugin_i18n = new I18n();
-		$plugin_i18n->set_domain( $this->get_plugin_name() );
+		$plugin_i18n->set_domain( Plugin_Name::$plugin_name );
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -111,7 +90,7 @@ class App {
 	 */
 	private function define_dashboard_hooks() {
 
-		$this->dashboard = new Dashboard( $this->get_plugin_name(), $this->get_version() );
+		$this->dashboard = new Dashboard();
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $this->dashboard, 'enqueue_scripts' );
@@ -129,7 +108,7 @@ class App {
 	 */
 	private function define_web_hooks() {
 
-		$this->web = new Web( $this->get_plugin_name(), $this->get_version() );
+		$this->web = new Web();
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $this->web, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $this->web, 'enqueue_scripts' );
@@ -146,17 +125,6 @@ class App {
 	}
 
 	/**
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The name of the plugin.
-	 */
-	public function get_plugin_name() {
-		return $this->plugin_name;
-	}
-
-	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
@@ -164,16 +132,6 @@ class App {
 	 */
 	public function get_loader() {
 		return $this->loader;
-	}
-
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The version number of the plugin.
-	 */
-	public function get_version() {
-		return $this->version;
 	}
 
 }

@@ -78,6 +78,24 @@ class Plugin_Name {
 
 	static $app;
 
+	/**
+	 * The unique identifier of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 */
+	static $plugin_name = 'plugin-name';
+
+	/**
+	 * The current version of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   protected
+	 * @var      string    $version    The current version of the plugin.
+	 */
+	static $version = '0.1.0';
+
 	public static function init() {
 
 		if ( null == self::$app ) {

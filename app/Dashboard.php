@@ -15,24 +15,6 @@ namespace Plugin_Name;
 class Dashboard {
 
 	/**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
-
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
-
-	/**
 	 * The minification string
 	 *
 	 * @since    1.0.0
@@ -45,15 +27,10 @@ class Dashboard {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct() {
 
-		$this->plugin_name = $plugin_name;
-		$this->version = $version;
-
-		if( ! defined( 'SCRIPT_DEBUG' ) || SCRIPT_DEBUG !== true ) {
+		if ( ! defined( 'SCRIPT_DEBUG' ) || true !== SCRIPT_DEBUG ) {
 			$this->min = '.min';
 		}
 
@@ -78,7 +55,7 @@ class Dashboard {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, PLUGIN_NAME_URL . 'assets/css/dashboard' . $this->min . '.css', array(), $this->version, 'all' );
+		wp_enqueue_style( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/css/dashboard' . $this->min . '.css', array(), Plugin_Name::$version, 'all' );
 
 	}
 
@@ -101,7 +78,7 @@ class Dashboard {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, PLUGIN_NAME_URL . 'assets/js/dashboard' . $this->min . '.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( Plugin_Name::$plugin_name, PLUGIN_NAME_URL . 'assets/js/dashboard' . $this->min . '.js', array( 'jquery' ), Plugin_Name::$version, false );
 
 	}
 
@@ -113,10 +90,10 @@ class Dashboard {
 	public function add_plugin_admin_menu() {
 
 		$this->plugin_screen_hook_suffix = add_options_page(
-			__( 'Plugin Name Settings', $this->plugin_name ),
-			__( 'Plugin Name', $this->plugin_name ),
+			__( 'Plugin Name Settings', Plugin_Name::$plugin_name ),
+			__( 'Plugin Name', Plugin_Name::$plugin_name ),
 			'edit_posts',
-			$this->plugin_name,
+			Plugin_Name::$plugin_name,
 			array( $this, 'display_plugin_admin_page' )
 		);
 
@@ -142,7 +119,7 @@ class Dashboard {
 
 		return array_merge(
 			array(
-				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . $this->plugin_name ) . '">' . __( 'Settings', $this->plugin_name ) . '</a>'
+				'settings' => '<a href="' . admin_url( 'options-general.php?page=' . Plugin_Name::$plugin_name ) . '">' . __( 'Settings', Plugin_Name::$plugin_name ) . '</a>'
 			),
 			$links
 		);
