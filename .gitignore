@@ -42,7 +42,6 @@ node_modules
 bower_components
 
 # Generated files
-assets/js/*.js
+assets/js/**
 assets/css/**
-build
-*.zip
+README.txt
