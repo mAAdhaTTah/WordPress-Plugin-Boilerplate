@@ -1,3 +1,9 @@
+# DEPRECATED
+
+This project has been deprecated in favor of [jaxion-bootstrap](https://github.com/intraxia/jaxion-bootstrap).
+That project is still under development but most of the tools/implementations found here will be included.
+If you have any questions, please email me at jamesorodig@gmail.com.
+
 # wppb-mod
 
 A standardized, organized, object-oriented foundation for building high-quality WordPress Plugins.
